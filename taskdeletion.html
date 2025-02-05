@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Deletion</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .task {
+      background-color: #f9f9f9;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .task-text {
+      color: #333;
+      font-size: 16px;
+    }
+
+    .delete-btn {
+      background-color: #ff4d4d;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    .delete-btn:hover {
+      background-color: #ff1a1a;
+    }
+
+    .delete-btn:active {
+      background-color: #e60000;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Task List</h2>
+    <ul id="task-list">
+      <li class="task">
+        <span class="task-text">Task 1</span>
+        <button class="delete-btn" onclick="deleteTask(this)">Delete</button>
+      </li>
+      <li class="task">
+        <span class="task-text">Task 2</span>
+        <button class="delete-btn" onclick="deleteTask(this)">Delete</button>
+      </li>
+      <li class="task">
+        <span class="task-text">Task 3</span>
+        <button class="delete-btn" onclick="deleteTask(this)">Delete</button>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    // Function to delete the task
+    function deleteTask(button) {
+      // Find the parent <li> element of the clicked delete button
+      const task = button.parentElement;
+      // Remove the task from the DOM
+      task.remove();
+    }
+  </script>
+
+</body>
+</html>
